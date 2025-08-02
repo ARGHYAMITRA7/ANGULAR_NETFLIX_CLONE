@@ -1,0 +1,38 @@
+<div class="background-img">
+  <div class="container">
+    <input
+      type="text"
+      name="txt"
+      placeholder="Email"
+      [(ngModel)]="signupobjects.email"
+    />
+    <br /><br />
+    <input
+      type="password"
+      name="pass"
+      placeholder="Password"
+      required=""
+      [(ngModel)]="signupobjects.pass"
+    />
+    <br /><br />
+    <button (click)="onSignUp()" id="color">Sign Up</button>
+    <br /><br /><br />
+    <input
+      type="email"
+      name="email"
+      placeholder="Email"
+      required=""
+      [(ngModel)]="loginobject.email"
+    />
+    <br /><br />
+    <input
+      type="password"
+      name="pass"
+      placeholder="Password"
+      required=""
+      [(ngModel)]="loginobject.pass"
+    />
+    <br />
+    <button (click)="onLogin()" id="color">Log In</button>
+  </div>
+</div>
