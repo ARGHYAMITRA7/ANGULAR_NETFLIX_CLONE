@@ -4,3 +4,74 @@
 @tailwind utilities;
 @import 'Netflix_Clone_Project\node_modules\swiper\swiper.scss';
 
+/* Global Styles */
+* {
+  scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #141414;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #E50914;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #c20812;
+}
+
+/* Base Animations */
+@layer components {
+  .fade-in-animation {
+    @apply animate-fade-in;
+  }
+
+  .slide-up-animation {
+    @apply animate-slide-up;
+  }
+
+  .netflix-button {
+    @apply px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 active:scale-95;
+  }
+
+  .netflix-button-primary {
+    @apply netflix-button bg-netflix-red text-white hover:bg-red-700 shadow-netflix hover:shadow-netflix-hover;
+  }
+
+  .netflix-button-secondary {
+    @apply netflix-button bg-gray-700 bg-opacity-70 text-white hover:bg-opacity-100;
+  }
+
+  .netflix-card {
+    @apply rounded-lg overflow-hidden shadow-netflix hover:shadow-netflix-lg transition-all duration-300 transform hover:scale-105 cursor-pointer;
+  }
+
+  .netflix-title {
+    @apply text-white font-bold text-lg tracking-tight;
+  }
+
+  .netflix-subtitle {
+    @apply text-gray-300 text-sm font-light line-clamp-3;
+  }
+
+  .netflix-gradient {
+    @apply bg-gradient-to-r from-netflix-black via-transparent to-transparent;
+  }
+
+  .netflix-gradient-dark {
+    @apply bg-gradient-to-b from-black to-netflix-black;
+  }
+
+  .glass-effect {
+    @apply bg-black bg-opacity-50 backdrop-blur-sm border border-gray-700 border-opacity-30;
+  }
+}
+
