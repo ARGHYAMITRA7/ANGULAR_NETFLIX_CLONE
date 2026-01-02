@@ -1,13 +1,26 @@
-<iframe class="w-full h-full absolute" src="https://www.youtube.com/embed/MD7v0-igVIM?autoplay=1&mute=1&loop=1&controls=0" frameborder="0"></iframe>
-<div class="h-screen bg-white">
-    <div class="pt-[20%] px-24 absolute text-white h-full bg-gradient-to-r from-black" style="margin-top: -5.4rem;">
-        <h1 class="text-6xl font-bold">Singham Again</h1>
-        <p class="inline-block py-6 text-xl w-1/4 flex-wrap">Bajirao Singham returns to uphold justice in this high-octane action saga. As threats escalate, he joins forces with fellow supercops to take down a powerful enemy. Featuring Ajay Devgn, Akshay Kumar, Ranveer Singh, Deepika Padukone, and Tiger Shroff. Directed by Rohit Shetty. <br> <br>
-</p>
-        <div style="margin-top: -1.2rem;">
-            <button class="bg-white text-black py-4 px-12 text-xl rounded-lg hover:bg-opacity-70 transition-[1s]">Play</button>
-            <button class="mx-2 bg-gray-500 text-white px-12 py-4 text-xl bg-opacity-70 rounded-lg">More Info</button>
-        </div>
-    </div>
+<div class="h-screen relative overflow-hidden">
+  <iframe class="w-full h-full absolute top-0 left-0" [src]="videoUrl" allow="autoplay" loading="lazy" title="Banner Trailer"></iframe>
 
+  <div class="pt-[15%] px-24 absolute h-full w-full text-white bg-gradient-to-r from-black z-10">
+    <h1 class="text-6xl font-bold">{{bannerTitle}}</h1>
+    <p class="inline-block py-6 text-xl w-1/4 flex-wrap">{{bannerOverview}}</p>
+    <div class="flex gap-4">
+      <button 
+        (click)="onPlayClick()"
+        class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 text-lg rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center gap-2"
+        type="button"
+      >
+        <i class="fa fa-play"></i>
+        Play
+      </button>
+      <button 
+        (click)="onMoreInfoClick()"
+        class="bg-gray-700 hover:bg-gray-800 text-white font-bold py-3 px-8 text-lg rounded-lg transition-all duration-300 transform hover:scale-105 bg-opacity-70 hover:bg-opacity-100 flex items-center gap-2"
+        type="button"
+      >
+        <i class="fa fa-info-circle"></i>
+        More Info
+      </button>
+    </div>
+  </div>
 </div>

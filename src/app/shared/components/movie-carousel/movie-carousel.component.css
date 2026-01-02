@@ -1,104 +1,79 @@
-/* Container that holds all the cards */
 .swiper-container {
-    width: 100%;
-    overflow-x: auto;
-    overflow-y: hidden;
-    white-space: nowrap;
-    padding-bottom: 10px;
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  padding-bottom: 10px;
 }
 
-/* Horizontal row for cards */
 .swiper-wrapper {
-    display: flex;
-    flex-direction: row;
-    gap: 20px; /* spacing between cards */
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
 }
 
-/* Individual card styling */
 .swiper-slide {
-    transition: all 300ms ease-in-out;
-    border-radius: 5px;
-    cursor: pointer;
-    flex: 0 0 auto; /* Keep cards in row */
-    position: relative;
+  transition: all 300ms ease-in-out;
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+  flex: 0 0 auto;
 }
 
-/* Movie poster image */
-.swiper-slide img {
-    border-radius: 5px;
-    width: 300px !important;
-    height: 300px !important;
-    object-fit: cover;
-    cursor: pointer;
-    transition: box-shadow 300ms ease-in-out;
-}
-
-/* Image active state */
-.swiper-slide img:active {
-    cursor: grabbing;
-}
-
-/* Hover zoom effect */
-.swiper-slide:hover {
-    transform: scale(1.1);
-    z-index: 1;
-}
-
-/* Image box-shadow on hover */
-.swiper-slide:hover img {
-    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.5);
-}
-
-/* Movie description box */
 .desc {
-    transition: all 300ms ease-in-out;
-    background-color: grey;
-    height: 170px;
-    position: absolute;
-    width: 100%;
-    bottom: 0;
-    color: white;
-    font-family: Arial, sans-serif;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    z-index: 2;
+  transition: all 300ms ease-in-out;
+  background-color: #181818c4;
+  height: 170px;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
 }
 
-/* Optional: if this is used for TV section */
+.desc:hover {
+  transition: all 300ms ease-in-out;
+}
+
 .desc.tv {
-    height: 60px;
+  height: 60px;
 }
 
-/* Hide scrollbar for cleaner UI */
-.swiper-container::-webkit-scrollbar {
-    display: none;
+.swiper-slide img {
+  border-radius: 5px;
+  cursor: pointer;
+  width: 300px !important;
+  height: 300px !important;
 }
 
-/* Responsive styles for tablets and phones */
+.swiper-slide img:active {
+  cursor: grabbing;
+}
+
+.swiper-slide:hover {
+  transform: scale(1.12);
+  transition: all 300ms ease-in-out;
+  transition-delay: 300ms;
+  z-index: 1;
+}
+
+.swiper-slide:hover img {
+  transition-delay: 300ms;
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.5);
+}
+
 @media screen and (max-width: 599px) {
-    .swiper-slide img {
-        max-width: 14rem;
-        height: auto !important;
-    }
+  .swiper-slide img {
+    max-width: 14rem;
+  }
 
-    .swiper-slide {
-        flex: 0 0 auto;
-    }
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 400px) {
-    .swiper-slide img {
-        max-width: 10.5rem;
-        border-radius: 2px;
-    }
-
-    .desc {
-        font-size: 0.75rem;
-    }
-}
-p {
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+  .swiper-slide img {
+    max-width: 10.5rem;
+    border-radius: 2px;
+  }
 }

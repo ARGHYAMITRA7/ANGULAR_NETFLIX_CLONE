@@ -1,38 +1,142 @@
 <div class="background-img">
   <div class="container">
-    <input
-      type="text"
-      name="txt"
-      placeholder="Email"
-      [(ngModel)]="signupobjects.email"
-    />
-    <br /><br />
-    <input
-      type="password"
-      name="pass"
-      placeholder="Password"
-      required=""
-      [(ngModel)]="signupobjects.pass"
-    />
-    <br /><br />
-    <button (click)="onSignUp()" id="color">Sign Up</button>
-    <br /><br /><br />
-    <input
-      type="email"
-      name="email"
-      placeholder="Email"
-      required=""
-      [(ngModel)]="loginobject.email"
-    />
-    <br /><br />
-    <input
-      type="password"
-      name="pass"
-      placeholder="Password"
-      required=""
-      [(ngModel)]="loginobject.pass"
-    />
-    <br />
-    <button (click)="onLogin()" id="color">Log In</button>
+    <!-- Flash Messages -->
+    <div *ngIf="successMessage" class="message success-message">
+      <i class="fa fa-check-circle"></i>
+      <span>{{ successMessage }}</span>
+    </div>
+    <div *ngIf="errorMessage" class="message error-message">
+      <i class="fa fa-exclamation-circle"></i>
+      <span>{{ errorMessage }}</span>
+    </div>
+
+    <!-- Tabs -->
+    <div class="tabs">
+      <button
+        (click)="switchTab(true)"
+        [class.active]="isLoginTab"
+        class="tab-button"
+        type="button"
+      >
+        <i class="fa fa-sign-in"></i>
+        Login
+      </button>
+      <button
+        (click)="switchTab(false)"
+        [class.active]="!isLoginTab"
+        class="tab-button"
+        type="button"
+      >
+        <i class="fa fa-user-plus"></i>
+        Sign Up
+      </button>
+    </div>
+
+    <!-- Login Form -->
+    <form *ngIf="isLoginTab" class="form-container">
+      <h2>Welcome Back</h2>
+      <p class="subtitle">Sign in to your account</p>
+
+      <div class="form-group">
+        <label for="login-email">
+          <i class="fa fa-envelope"></i>
+          Email Address
+        </label>
+        <input
+          id="login-email"
+          type="email"
+          placeholder="Enter your email"
+          [(ngModel)]="loginobject.email"
+          name="email"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="login-password">
+          <i class="fa fa-lock"></i>
+          Password
+        </label>
+        <input
+          id="login-password"
+          type="password"
+          placeholder="Enter your password"
+          [(ngModel)]="loginobject.password"
+          name="password"
+          required
+        />
+      </div>
+
+      <button (click)="onLogin()" class="submit-btn" type="button">
+        <i class="fa fa-sign-in"></i>
+        Sign In
+      </button>
+
+      <p class="footer-text">
+        Don't have an account?
+        <button (click)="switchTab(false)" (keydown.enter)="switchTab(false)" class="link" type="button">Sign up here</button>
+      </p>
+    </form>
+
+    <!-- Sign Up Form -->
+    <form *ngIf="!isLoginTab" class="form-container">
+      <h2>Create Account</h2>
+      <p class="subtitle">Join Netflix Clone today</p>
+
+      <div class="form-group">
+        <label for="signup-email">
+          <i class="fa fa-envelope"></i>
+          Email Address
+        </label>
+        <input
+          id="signup-email"
+          type="email"
+          placeholder="Enter your email"
+          [(ngModel)]="signupobjects.email"
+          name="email"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="signup-password">
+          <i class="fa fa-lock"></i>
+          Password
+        </label>
+        <input
+          id="signup-password"
+          type="password"
+          placeholder="Create a password (min 6 characters)"
+          [(ngModel)]="signupobjects.password"
+          name="password"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="confirm-password">
+          <i class="fa fa-lock"></i>
+          Confirm Password
+        </label>
+        <input
+          id="confirm-password"
+          type="password"
+          placeholder="Confirm your password"
+          [(ngModel)]="signupobjects.confirmPassword"
+          name="confirmPassword"
+          required
+        />
+      </div>
+
+      <button (click)="onSignUp()" class="submit-btn" type="button">
+        <i class="fa fa-user-plus"></i>
+        Create Account
+      </button>
+
+      <p class="footer-text">
+        Already have an account?
+        <button (click)="switchTab(true)" (keydown.enter)="switchTab(true)" class="link" type="button">Sign in here</button>
+      </p>
+    </form>
   </div>
 </div>

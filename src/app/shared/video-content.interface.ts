@@ -4,7 +4,7 @@ export interface IVideoContent{
     genre_ids:number[]
     id:number
     original_language:string
-    original_itle:string
+    original_title:string
     overview:string
     popularity:number
     poster_path:string
@@ -13,4 +13,5 @@ export interface IVideoContent{
     video:boolean
     vote_average:number
     vote_count:number
+    name:string
 }

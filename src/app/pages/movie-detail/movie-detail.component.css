@@ -1,0 +1,57 @@
+.movie-detail-container {
+  background-color: #000;
+  min-height: 100vh;
+}
+
+/* Custom scrollbar for reviews section */
+.space-y-6::-webkit-scrollbar {
+  width: 8px;
+}
+
+.space-y-6::-webkit-scrollbar-track {
+  background: #1a1a1a;
+  border-radius: 10px;
+}
+
+.space-y-6::-webkit-scrollbar-thumb {
+  background: #dc2626;
+  border-radius: 10px;
+}
+
+.space-y-6::-webkit-scrollbar-thumb:hover {
+  background: #b91c1c;
+}
+
+/* Smooth transitions */
+button {
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* Review card animations */
+.bg-gray-900 {
+  transition: all 0.3s ease;
+}
+
+.bg-gray-900:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(220, 38, 38, 0.1);
+}
+
+/* Responsive video player */
+iframe {
+  display: block;
+  border: none;
+}
+
+/* Gradient overlay for trailer */
+.bg-gradient-to-t {
+  background: linear-gradient(to top, rgba(0, 0, 0, 1), transparent);
+}

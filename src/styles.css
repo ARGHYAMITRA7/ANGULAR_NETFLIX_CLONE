@@ -2,7 +2,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import 'Netflix_Clone_Project\node_modules\swiper\swiper.scss';
 
 /* Global Styles */
 * {
